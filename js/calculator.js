@@ -4,8 +4,8 @@ function calculateBMI() {
     var bmi = weight / (height * height);
     var result = document.getElementById("result");
     if (!isNaN(bmi)) {
-    result.innerHTML = "Your BMI is " + bmi.toFixed(2);
+    result.innerHTML = "Ваш ИМТ составляет " + bmi.toFixed(2);
     } else {
-    result.innerHTML = "Please enter valid values.";
+    result.innerHTML = "Введите валидные данные.";
     }
     }
