@@ -30,5 +30,5 @@
     text-align: center;
   }
   #navbar ul li { float: none; }
-  #navbar li:hover { background-color: #f90; }
+  #navbar li:hover { background-color: rgb(63, 75, 180); }
   /* #navbar ul li:hover { background-color: #666; } */
