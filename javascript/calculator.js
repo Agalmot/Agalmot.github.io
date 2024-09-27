@@ -10,11 +10,11 @@ function calculateBMI() {
     
     if (!isNaN(bmi)) {
     
-    result.innerHTML = "Your BMI is " + bmi.toFixed(2);
+    result.innerHTML = "Ваш ИМТ " + bmi.toFixed(2);
     
     } else {
     
-    result.innerHTML = "Please enter valid values.";
+    result.innerHTML = "Введите валидные данные";
     
     }
     
