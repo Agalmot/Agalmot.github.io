@@ -1,13 +1,3 @@
-#feedback {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    min-height: 100vh;
-    padding: 50px;
-    
-    color: #e7cfe9;
-    font-family: "Roboto", sans-serif;
-}
 form div {
     margin-top: 1rem;
 }
