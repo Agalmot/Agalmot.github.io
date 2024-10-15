@@ -61,7 +61,8 @@
                     Имя:
                     <input
                         type="text"
-                        name="name">
+                        name="name"
+                        value="ivan" onblur="if(this.value.length == 0) this.value = 'Name'" onfocus="if(this.value == 'Name') this.value = 'Галина' ">
                 </label>
                 <label>
                     Номер группы:
@@ -73,13 +74,15 @@
                     Телефон для обратной связи:
                     <input
                         type="tel"
-                        name="tel">
+                        name="tel"
+                        value="8916737484" onblur="if(this.value.length == 0) this.value = 'Number'" onfocus="if(this.value == 'Number') this.value = '8916737484' ">
                 </label>
                 <label>
                     Электронная почта:
                     <input
                         type="email"
-                        name="email">
+                        name="email"
+                        value="name@example.com" onblur="if(this.value.length == 0) this.value = 'galina@gooogle.ru'" onfocus="if(this.value == 'galina@gooogle.ru') this.value = 'galina@gooogle.ru' ">
                 </label>
                 <label>
                     Согласен с обработкой ПД:
@@ -90,8 +93,8 @@
 
 
                 <label>
-                    Отзыв:
-                    <textarea name="comment"></textarea>
+                    Пожелание:
+                    <textarea name="comment" onblur="if(this.value.length == 0) this.value = 'Хочу записаться в бассейн на среду'" onfocus="if(this.value == 'Хочу записаться в бассейн на среду') this.value='Хочу записаться в бассейн на среду'">Ваше пожелание</textarea>
                 </label>
                 <button type="submit">
                     Отправить
