@@ -10,45 +10,54 @@
             margin: 20px;
         }
         .passport-page {
-            border: 1px solid #000;
-            padding: 15px;
+            border: 1px solid #ccc;
+            padding: 20px;
             margin-bottom: 20px;
+            position: relative;
+        }
+        .passport-image {
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
 
-    <h1>Паспорт гражданина</h1>
-    <h2>Российская Федерация</h2>
-    
-    <div class="passport-page">
-        <h2>Страница 2</h2>
-        <p><strong>Фамилия:</strong> Альперович</p>
-        <p><strong>Имя:</strong> Галина</p>
-        <p><strong>Год рождения:</strong> 2005</p>
-        <p><strong>Пол:</strong> Женский</p>
-        <p><strong>Гражданство:</strong> Россия</p>
-        <p><strong>Серия и номер паспорта:</strong> 1234 567890</p>
-    </div>
+<h1>Сканы паспорта</h1>
 
-    <div class="passport-page">
-        <h2>Страница 3</h2>
-        <p><strong>Дата выдачи:</strong> 01.01.2020</p>
-        <p><strong>Кем выдан:</strong> УФМС России по г. Москве</p>
-        <p><strong>Срок действия:</strong> 01.01.2030</p>
-    </div>
+<div class="passport-page">
+    <h2>Страница 2</h2>
+    <img src="passport-page-2.jpg" alt="Страница 2 паспорта" class="passport-image">
+    <p><strong>Фамилия:</strong> Иванов</p>
+    <p><strong>Имя:</strong> Иван</p>
+    <p><strong>Год рождения:</strong> 1990</p>
+</div>
 
-    <button id="getData">Получить данные</button>
+<div class="passport-page">
+    <h2>Страница 3</h2>
+    <img src="passport-page-3.jpg" alt="Страница 3 паспорта" class="passport-image">
+    <p><strong>Серия:</strong> 1234</p>
+    <p><strong>Номер:</strong> 567890</p>
+    <p><strong>Дата выдачи:</strong> 01.01.2010</p>
+</div>
 
-    <script>
-        document.getElementById('getData').addEventListener('click', function() {
-            const surname = document.querySelector('.passport-page p:first-child').textContent.split(': ')[1];
-            const name = document.querySelector('.passport-page p:nth-child(2)').textContent.split(': ')[1];
-            const birthYear = document.querySelector('.passport-page p:nth-child(3)').textContent.split(': ')[1];
-            
-            alert('Фамилия: ' + surname + 'nИмя: ' + name + 'nГод рождения: ' + birthYear);
-        });
-    </script>
+<button id="getDataButton">Получить данные</button>
+
+<script>
+    document.getElementById('getDataButton').addEventListener('click', function() {
+        const lastName = document.querySelector('.passport-page p:nth-of-type(1)').textContent.split(': ')[1];
+        const firstName = document.querySelector('.passport-page p:nth-of-type(2)').textContent.split(': ')[1];
+        const birthYear = document.querySelector('.passport-page p:nth-of-type(3)').textContent.split(': ')[1];
+
+        console.log('Фамилия:', lastName);
+        console.log('Имя:', firstName);
+        console.log('Год рождения:', birthYear);
+    });
+</script>
 
 </body>
 </html>
