@@ -58,24 +58,14 @@
 <p>Фамилия <br>
   <span id="lastname"> Альперович </span> 
 </p>
-<p>Имя <br>
-<span id="name"> Галина </span> 
-</p>
 </body>
 <script>
     let old_name_innerText = document.getElementyById("span")[0].innerText
     console.log("Старое имя:", old_name_innerText)
-    let new_name= "Galina"
+    let new_name= "Alperovich"
     console.log("Новое имя:", new_name)
     let old_name_nde = document.getElementyById("span")[0]
     old_name_node.innerText = new_name
-
-    let late_name_innerText = document.getElementyById("span")[0].innerText
-    console.log("Старое имя:", late_name_innerText)
-    let perf_name= "Galina"
-    console.log("Новое имя:", perf_name)
-    let late_name_nde = document.getElementyById("span")[0]
-    late_name_node.innerText = perf_name
 </script>
 
 </html>
