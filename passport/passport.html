@@ -55,30 +55,28 @@
     <img src="./img/foto.jpg" width="100">
 </div>
 
+<p>Фамилия <br>
+  <span id="lastname"> Альперович </span> 
+</p>
+<p>Имя <br>
+<span id="name"> Галина </span> 
+</p>
+</body>
 <script>
-    // Функция для получения данных из DOM
-    function getPassportData() {
-        const secondPage = document.getElementById('second-page');
-        const thirdPage = document.getElementById('third-page');
+    let old_name_innerText = document.getElementyById("origin").innerText
+    console.log("Старое имя:", old_name_innerText)
+    let new_name= "Galina"
+    console.log("Новое имя:", new_name)
+    let old_name_nde = document.getElementyById("origin")
+    old_name_node.innerText = new_name
 
-        const issuedBy = secondPage.querySelector('p strong').nextSibling.nodeValue.trim();
-        const issueDate = secondPage.children[1].innerText.split(': ')[1];
-
-        const surname = thirdPage.querySelector('p strong').nextSibling.nodeValue.trim();
-        const name = thirdPage.querySelectorAll('p strong')[1].nextSibling.nodeValue.trim();
-        const patronymic = thirdPage.querySelectorAll('p strong')[2].nextSibling.nodeValue.trim();
-
-        console.log(`Кем выдан: ${issuedBy}`);
-        console.log(`Дата выдачи: ${issueDate}`);
-        console.log(`Фамилия: ${surname}`);
-        console.log(`Имя: ${name}`);
-        console.log(`Отчество: ${patronymic}`);
-    }
-
-    // Вызов функции для вывода данных
-    getPassportData();
+    let late_name_innerText = document.getElementyById("origin").innerText
+    console.log("Старое имя:", late_name_innerText)
+    perf_name= "Galina"
+    console.log("Новое имя:", perf_name)
+    late_name_nde = document.getElementyById("origin")
+    late_name_node.innerText = perf_name
 </script>
 
-</body>
 </html>
 
