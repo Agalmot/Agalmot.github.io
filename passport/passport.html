@@ -1,63 +1,83 @@
-<!DOCTYPE html>
+html<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Паспортные данные</title>
+    <title>Паспорт</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
         .passport-page {
-            border: 1px solid #ccc;
+            border: 1px solid #000;
             padding: 20px;
             margin-bottom: 20px;
-            position: relative;
+            width: 300px;
+            display: inline-block;
+            vertical-align: top;
         }
-        .passport-image {
-            width: 100%;
-            height: auto;
-            max-width: 400px;
+        .photo {
+            float: right;
+            width: 70px;
+            height: 90px;
+            background-color: #ccc;
+            margin-left: 10px;
         }
-        .hidden {
-            display: none;
+        .signature {
+            width: 100px;
+            height: 50px;
+            background-color: #eee;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
-<h1>Сканы паспорта</h1>
+<div class="passport-page" id="second-page">
+    <h2>Вторая страница</h2>
+    <p><strong>Кем выдан:</strong> УФМС России</p>
+    <p><strong>Дата выдачи:</strong> 01.01.2020</p>
+    <div class="signature">Подпись</div>
+</div>
 
-<div class="passport-page">
-    <h2>Страница 2</h2>
-    <img src="passport-page-2.jpg" alt="Страница 2 паспорта" class="passport-image">
+<div class="passport-page" id="third-page">
+    <h2>Третья страница</h2>
     <p><strong>Фамилия:</strong> Иванов</p>
     <p><strong>Имя:</strong> Иван</p>
-    <p><strong>Год рождения:</strong> 1990</p>
-</div>
-
-<div class="passport-page">
-    <h2>Страница 3</h2>
-    <img src="passport-page-3.jpg" alt="Страница 3 паспорта" class="passport-image">
+    <p><strong>Отчество:</strong> Иванович</p>
+    <p><strong>Пол:</strong> Мужской</p>
+    <p><strong>Дата рождения:</strong> 01.01.1980</p>
+    <p><strong>Место рождения:</strong> Москва</p>
     <p><strong>Серия:</strong> 1234</p>
     <p><strong>Номер:</strong> 567890</p>
-    <p><strong>Дата выдачи:</strong> 01.01.2010</p>
+    <div class="photo">Фотография</div>
 </div>
 
-<button id="getDataButton">Получить данные</button>
-
 <script>
-    document.getElementById('getDataButton').addEventListener('click', function() {
-        const lastName = document.querySelector('.passport-page p:nth-of-type(1)').textContent.split(': ')[1];
-        const firstName = document.querySelector('.passport-page p:nth-of-type(2)').textContent.split(': ')[1];
-        const birthYear = document.querySelector('.passport-page p:nth-of-type(3)').textContent.split(': ')[1];
+    // Функция для получения данных из DOM
+    function getPassportData() {
+        const secondPage = document.getElementById('second-page');
+        const thirdPage = document.getElementById('third-page');
 
-        console.log('Фамилия:', lastName);
-        console.log('Имя:', firstName);
-        console.log('Год рождения:', birthYear);
-    });
+        const issuedBy = secondPage.querySelector('p strong').nextSibling.nodeValue.trim();
+        const issueDate = secondPage.children[1].innerText.split(': ')[1];
+
+        const surname = thirdPage.querySelector('p strong').nextSibling.nodeValue.trim();
+        const name = thirdPage.querySelectorAll('p strong')[1].nextSibling.nodeValue.trim();
+        const patronymic = thirdPage.querySelectorAll('p strong')[2].nextSibling.nodeValue.trim();
+
+        console.log(`Кем выдан: ${issuedBy}`);
+        console.log(`Дата выдачи: ${issueDate}`);
+        console.log(`Фамилия: ${surname}`);
+        console.log(`Имя: ${name}`);
+        console.log(`Отчество: ${patronymic}`);
+    }
+
+    // Вызов функции для вывода данных
+    getPassportData();
 </script>
 
 </body>
 </html>
+
