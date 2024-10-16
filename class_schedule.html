@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        p {
+         font-family: Verdana, Arial, Helvetica, sans-serif; 
+         font-size: 14pt;
+        }
+    </style>   
+    <head>
+        <meta charset="UTF-8">
+        <title>Фитнес</title>
+        <link rel="stylesheet" href="/css/index.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/menu.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/feedback.css" type="text/css"/>
+    </head>
+<body >
+    
+
+<div>
+<ul id="navbar">
+        <li><a href="./index.html">Главная</a></li>
+        <li><a href="./calculator.html">Калькулятор</a></li>
+        <li><a href="#">Услуги</a>
+            <ul>
+                <li><a href="./pool.html">Бассейн</a></li>
+                <li><a href="#">Йога</a></li>
+                <li><a href="#">Кардио</a></li>
+              </ul>
+        </li>
+        <li style="background-color: #f90"><a href="./class_schedule.html">Расписание</a></li>
+        <li><a href="./photo_gallery.html">Фотогалерея</a></li>
+        <li><a href="./info.html">Информация</a></li>
+      </ul>
+</div>
+
+<br>
+
+<div>
+    <ul>
+        <li>Авторские программы World Class с заданной хореографией, позволяющие проработать все группы мыщц, повысить выносливость и силу, 
+            а также конечно зарядить энергией и хорошим настроением. Разработаны ведущими тренерами и методистами России, имеющими сертификацию 
+            международного образца</li>
+        <li>Наши персональные тренеры подберут для вас индивидуальную программу и поддержат вашу мотивацию для достижения ваших целей
+            <ul>
+                <li>Силовые программы для тренировки мышц рук, плеч, груди, верхней части спины и брюшного пресса</li>
+                <li>Выбор из более чем 25 видов различных программ позволит подобрать занятие максимально подходящее вашим целям</li>
+                <li>Широкий спектр программ всех направлений от Dance Studio by World Class - одной из самых современных танцевальных студий в России</li>
+            </ul>
+        </li>
+        <li>Кардиотренировка - это тренинг сердечной мышцы, основанный на аэробных нагрузках, таких как бег, ходьба, различные виды аэробики
+            <ul>
+                <li>Уникальные программы, направленные на улучшение физического состояния тела и обретение душевного равновесия и комфорта</li>
+                <li>Инструкторы наших клубов помогут вам достичь хороших результатов в основных направлениях боевых искусств как западных, так и восточных
+                    <ul>
+                        <li>Регулярные занятия на открытом воздухе под руководством профессиональных тренеров. Доступны для всех членов клубов World Class</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Получите интенсивную аэробную нагрузку и при этом зарядитесь положительными эмоциями от активного общения с друзьями и коллегами</li>
+</ul>
+</div>
+
+<br>
+<div>
+    <table>
+        <tr>
+         <td style="color: #a8c6e2 " width="1000">
+            <p  font-size: 280%>
+                Авторские программы World Class с заданной хореографией, позволяющие проработать все группы мыщц, повысить выносливость и силу, 
+                а также конечно зарядить энергией и хорошим настроением. Разработаны ведущими тренерами и методистами России, имеющими сертификацию 
+                международного образца
+        </p>
+    </td>
+        </tr>
+        <!--tr>
+            <td><img src="./img/resep.jpg"  target="_blank" alt="Ресепшн" hspace="50" vspace="10"></td>
+          </tr-->
+       </table>
+</div>
+
+<div>
+    <table style="color: #d7dfe6 ">
+        <tr>
+         <td>
+            <form action="" method="get">
+                <label>
+                    Имя:
+                    <input
+                        type="text"
+                        name="name"
+                        value="Галина" onblur="if(this.value.length == 0) this.value = 'Ваше имя'" onfocus="if(this.value == 'Ваше имя') this.value = 'Галина' ">
+                </label>
+                <label>
+                    Номер группы:
+                    <input
+                        type="number"
+                        name="number">
+                </label>
+                <label>
+                    Телефон для обратной связи:
+                    <input
+                        type="tel"
+                        name="tel"
+                        value="8916737484" onblur="if(this.value.length == 0) this.value = 'Номер телефона'" onfocus="if(this.value == 'Номер телефона') this.value = '8916737484' ">
+                </label>
+                <label>
+                    Электронная почта:
+                    <input
+                        type="email"
+                        name="email"
+                        value="galina@gooogle.ru" onblur="if(this.value.length == 0) this.value = 'E-mail'" onfocus="if(this.value == 'E-mail') this.value = 'galina@gooogle.ru' ">
+                </label>
+                <label>
+                    Согласен с обработкой ПД:
+                    <input
+                        type="checkbox"
+                        name="checkbox">
+                </label>
+
+
+                <label>
+                    Пожелание:
+                    <textarea name="comment" onblur="if(this.value.length == 0) this.value = 'Комментарий'" onfocus="if(this.value == 'Комментарий') this.value='Хочу записаться в бассейн на среду'">Ваше пожелание</textarea>
+                </label>
+                <button type="submit">
+                    Отправить
+                </button>
+            </form>
+    </td>
+        </tr>
+       </table>
+</div>
+
+
+
+
+</body>
+</html>
