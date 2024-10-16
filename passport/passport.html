@@ -1,14 +1,53 @@
 <!DOCTYPE html>
-<html>
- 
-    <head>
-        <p>Паспорт</p>
-    </head>
-<body >
-    <div>
-        <p>
-            Сдесь будет информация о паспорте
-        </p>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Паспортные данные</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .passport-page {
+            border: 1px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Паспорт гражданина</h1>
+    
+    <div class="passport-page">
+        <h2>Страница 2</h2>
+        <p><strong>Фамилия:</strong> Альперович</p>
+        <p><strong>Имя:</strong> Галина</p>
+        <p><strong>Год рождения:</strong> 2005</p>
+        <p><strong>Пол:</strong> Женский</p>
+        <p><strong>Гражданство:</strong> Россия</p>
+        <p><strong>Серия и номер паспорта:</strong> 1234 567890</p>
     </div>
+
+    <div class="passport-page">
+        <h2>Страница 3</h2>
+        <p><strong>Дата выдачи:</strong> 01.01.2020</p>
+        <p><strong>Кем выдан:</strong> УФМС России по г. Москве</p>
+        <p><strong>Срок действия:</strong> 01.01.2030</p>
+    </div>
+
+    <button id="getData">Получить данные</button>
+
+    <script>
+        document.getElementById('getData').addEventListener('click', function() {
+            const surname = document.querySelector('.passport-page p:first-child').textContent.split(': ')[1];
+            const name = document.querySelector('.passport-page p:nth-child(2)').textContent.split(': ')[1];
+            const birthYear = document.querySelector('.passport-page p:nth-child(3)').textContent.split(': ')[1];
+            
+            alert('Фамилия: ' + surname + 'nИмя: ' + name + 'nГод рождения: ' + birthYear);
+        });
+    </script>
+
 </body>
 </html>
