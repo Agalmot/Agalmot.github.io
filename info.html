@@ -21,6 +21,7 @@
                 <li><a href="#">Кардио</a></li>
               </ul>
         </li>
+        <li><a href="./class_schedule.html">Расписание</a></li>
         <li><a href="./photo_gallery.html">Фотогалерея</a></li>
         <li style="background-color: #f90"><a href="./info.html">Информация</a></li>
       </ul>
@@ -75,11 +76,43 @@
                         type="email"
                         name="email">
                 </label>
+                <label>
+                    Пароль:
+                    <input
+                        type="password"
+                        name="password">
+                </label>
+                <label>
+                    Дата отправки:
+                    <input
+                        type="date"
+                        name="date">
+                </label>
 
                 <label>
                     Отзыв:
                     <textarea name="comment"></textarea>
                 </label>
+
+                <fieldset>
+                    <legend>Выберети один из варианов:</legend>
+                  
+                    <div>
+                      <input type="radio" id="huey" name="drone" value="huey" checked />
+                      <label for="huey">Индивидуальное занятие</label>
+                    </div>
+                  
+                    <div>
+                      <input type="radio" id="dewey" name="drone" value="dewey" />
+                      <label for="dewey">Занятие в группе</label>
+                    </div>
+                  
+                    <div>
+                      <input type="radio" id="louie" name="drone" value="louie" />
+                      <label for="louie">Занятие в секции</label>
+                    </div>
+                  </fieldset>
+
                 <button type="submit">
                     Отправить
                 </button>
