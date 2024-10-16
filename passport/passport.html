@@ -55,6 +55,43 @@
     <img src="./img/foto.jpg" width="100">
 </div>
 
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смена языка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .change-language {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="name">Альперович</p>
+    <p class="change-language" onclick="changeLanguage()">Изменить язык</p>
+
+    <script>
+        function changeLanguage() {
+            const nameElement = document.getElementById("name");
+            if (nameElement.textContent === "Альперович") {
+                nameElement.textContent = "Alperovich";
+            } else {
+                nameElement.textContent = "Альперович";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
 </script>
 
 </html>
