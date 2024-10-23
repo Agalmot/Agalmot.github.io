@@ -20,6 +20,12 @@
         .signature, .photo {
             width: 100px;
             position: absolute;
+        }
+        .signature {
+            right: 20px;
+            top: 60px;
+        }
+        .photo {
             right: 20px;
             top: 20px;
         }
@@ -34,17 +40,17 @@
 <body>
 
     <div class="passport-page">
-        <h2>Паспорт гражданина Российской Федерации</h2>
+        <h2>Вторая страница</h2>
         <p><strong>Кем выдан:</strong> УФМС России</p>
         <p><strong>Дата выдачи:</strong> 01.01.2020</p>
         <img src="./img/podpis.jpg" alt="Подпись" class="signature">
     </div>
 
     <div class="passport-page clearfix">
-        <h2>Третья страница паспорта</h2>
+        <h2>Третья страница</h2>
         <p><strong>Фамилия:</strong> <span id="surname">Альперович</span></p>
         <p><strong>Имя:</strong> <span id="name">Галина</span></p>
-        <p><strong>Отчество:</strong> Александровна</p>
+        <p><strong>Отчество:</strong> <span id="patronymic">Александровна</span></p>
         <p><strong>Пол:</strong> Женский</p>
         <p><strong>Дата рождения:</strong> <span id="birthdate">25.12.2005</span></p>
         <p><strong>Место рождения:</strong> Москва</p>
@@ -58,17 +64,17 @@
         document.getElementById('changeToLatin').onclick = function() {
             const surnameElement = document.getElementById('surname');
             const nameElement = document.getElementById('name');
-
-            const surname = surnameElement.innerText.trim();
-            const name = nameElement.innerText.trim();
+            const patronymicElement = document.getElementById('patronymic');
 
             // Преобразование на латиницу
-            const latinSurname = surname.replace(/А/g, 'A').replace(/Л/g, 'L').replace(/Ь/g, '').replace(/П/g, 'P').replace(/Е/g, 'E').replace(/Р/g, 'R').replace(/О/g, 'O').replace(/В/g, 'V').replace(/И/g, 'I').replace(/Ч/g, 'Ch');
-            const latinName = name.replace(/Г/g, 'G').replace(/А/g, 'A').replace(/Л/g, 'L').replace(/И/g, 'I').replace(/Н/g, 'N').replace(/А/g, 'A');
+            const latinSurname = surnameElement.innerText.trim().replace('Альперович', 'Alperovich');
+            const latinName = nameElement.innerText.trim().replace('Галина', 'Galina');
+            const latinPatronymic = patronymicElement.innerText.trim().replace('Александровна', 'Aleksandrovna');
 
             // Обновление данных
             surnameElement.innerText = latinSurname;
             nameElement.innerText = latinName;
+            patronymicElement.innerText = latinPatronymic;
         };
     </script>
 
