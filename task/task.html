@@ -3,83 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Решение алгоритмической задачи</title>
+    <title>Паспорт</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
             padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 400px;
+            background-color: #f0f0f0;
         }
-        input {
+        .passport-page {
+            background-color: white;
+            border: 1px solid #000;
+            width: 600px;
+            height: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            position: relative;
+        }
+        .signature {
+            width: 100px;
+            height: auto;
+        }
+        .photo {
+            width: 100px;
+            height: auto;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .data {
             margin-bottom: 10px;
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        button {
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .result {
-            margin-top: 20px;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-<h2>Решение алгоритмической задачи</h2>
+<!-- Вторая страница паспорта -->
+<div class="passport-page" id="page2">
+    <h2>Паспорт гражданина Российской Федерации</h2>
+    <div class="data">Кем выдан: УФМС России</div>
+    <div class="data">Дата выдачи: 01.01.2020</div>
+    <img src="signature.png" alt="Подпись" class="signature">
+</div>
 
-<label for="a">Ребро кубической ёмкости (A):</label>
-<input type="number" id="a" required>
-
-<label for="h">Высота цилиндрической ёмкости (H):</label>
-<input type="number" id="h" required>
-
-<label for="r">Радиус основания цилиндрической ёмкости (R):</label>
-<input type="number" id="r" required>
-
-<label for="m">Объём жидкости (M):</label>
-<input type="number" id="m" required>
-
-<button onclick="calculate()">Проверить</button>
-
-<div class="result" id="result"></div>
+<!-- Третья страница паспорта -->
+<div class="passport-page" id="page3">
+    <h2>Личные данные</h2>
+    <div class="data">Фамилия: Иванов</div>
+    <div class="data">Имя: Иван</div>
+    <div class="data">Отчество: Иванович</div>
+    <div class="data">Пол: Мужской</div>
+    <div class="data">Дата рождения: 01.01.1990</div>
+    <div class="data">Место рождения: Москва</div>
+    <div class="data">Серия и номер: 1234 567890</div>
+    <img src="face_photo.jpg" alt="Фото лица" class="photo">
+</div>
 
 <script>
-    function calculate() {
-        const A = parseFloat(document.getElementById('a').value);
-        const H = parseFloat(document.getElementById('h').value);
-        const R = parseFloat(document.getElementById('r').value);
-        const M = parseFloat(document.getElementById('m').value);
+    // Получение данных из DOM
+    const surname = document.querySelector('#page3 .data:nth-child(3)').innerText.split(': ')[1];
+    const name = document.querySelector('#page3 .data:nth-child(2)').innerText.split(': ')[1];
+    const birthYear = document.querySelector('#page3 .data:nth-child(6)').innerText.split(': ')[1];
 
-        // Объемы ёмкостей
-        const volumeCube = Math.pow(A, 3); // Объем куба
-        const volumeCylinder = Math.PI * Math.pow(R, 2) * H; // Объем цилиндра
-
-        let resultText = '';
-
-        if (M <= volumeCube && M <= volumeCylinder) {
-            resultText = "жидкость поместится в две ёмкости";
-        } else if (M <= volumeCube) {
-            resultText = "жидкость поместится в первую ёмкость";
-        } else if (M <= volumeCylinder) {
-            resultText = "жидкость поместится во вторую ёмкость";
-        } else {
-            resultText = "жидкость не поместится ни в одну ёмкость";
-        }
-
-        document.getElementById('result').innerText = resultText;
-    }
+    console.log('Фамилия:', surname);
+    console.log('Имя:', name);
+    console.log('Год рождения:', birthYear);
 </script>
 
 </body>
