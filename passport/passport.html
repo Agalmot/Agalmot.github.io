@@ -7,55 +7,68 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
         }
         .passport-page {
+            background-color: white;
             border: 1px solid #000;
+            width: 600px;
+            height: 400px;
+            margin: 20px auto;
             padding: 20px;
-            margin-bottom: 20px;
-            width: 300px;
-            display: inline-block;
-            vertical-align: top;
-        }
-        .photo {
-            float: right;
-            width: 70px;
-            height: 90px;
-            background-color: #ccc;
-            margin-left: 10px;
+            position: relative;
         }
         .signature {
             width: 100px;
-            height: 50px;
-            background-color: #eee;
-            margin-top: 10px;
+            height: auto;
+        }
+        .photo {
+            width: 100px;
+            height: auto;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .data {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Паспорт Российской Федерации</h1>
-<div class="passport-page" id="second-page">
-    <h2>Вторая страница</h2>
-    <p><strong>Кем выдан:</strong> ГУ МВД России</p>
-    <p><strong>ДАТА ВЫДАЧИ:</strong> 01.01.2020</p>
-    <img src="./img/podpis.jpg" width="90">
+<!-- Вторая страница паспорта -->
+<div class="passport-page" id="page2">
+    <h2>Паспорт гражданина Российской Федерации</h2>
+    <div class="data">Кем выдан: УФМС России</div>
+    <div class="data">Дата выдачи: 01.01.2020</div>
+    <img src="signature.png" alt="Подпись" class="signature">
 </div>
 
-<div class="passport-page" id="third-page">
-    <h2>Третья страница</h2>
-    <p><strong>Фамилия:</strong> Альперович</p>
-    <p><strong>Имя:</strong> Галина</p>
-    <p><strong>Отчество:</strong> Александровна</p>
-    <p><strong>Пол:</strong> Женский</p>
-    <p><strong>Дата рождения:</strong> 25.12.2005</p>
-    <p><strong>Место рождения:</strong> Москва</p>
-    <p><strong>Серия:</strong> 1234</p>
-    <p><strong>Номер:</strong> 567890</p>
-    <img src="./img/foto.jpg" width="100">
+<!-- Третья страница паспорта -->
+<div class="passport-page" id="page3">
+    <h2>Личные данные</h2>
+    <div class="data">Фамилия: Иванов</div>
+    <div class="data">Имя: Иван</div>
+    <div class="data">Отчество: Иванович</div>
+    <div class="data">Пол: Мужской</div>
+    <div class="data">Дата рождения: 01.01.1990</div>
+    <div class="data">Место рождения: Москва</div>
+    <div class="data">Серия и номер: 1234 567890</div>
+    <img src="face_photo.jpg" alt="Фото лица" class="photo">
 </div>
 
+<script>
+    // Получение данных из DOM
+    const surname = document.querySelector('#page3 .data:nth-child(3)').innerText.split(': ')[1];
+    const name = document.querySelector('#page3 .data:nth-child(2)').innerText.split(': ')[1];
+    const birthYear = document.querySelector('#page3 .data:nth-child(6)').innerText.split(': ')[1];
+
+    console.log('Фамилия:', surname);
+    console.log('Имя:', name);
+    console.log('Год рождения:', birthYear);
 </script>
 
+</body>
 </html>
-
