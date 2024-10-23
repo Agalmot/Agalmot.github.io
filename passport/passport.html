@@ -18,9 +18,14 @@
         }
         .signature, .photo {
             width: 100px;
+            float: right;
+            margin-left: 20px;
         }
         h2 {
             text-align: center;
+        }
+        .clearfix {
+            overflow: auto;
         }
     </style>
 </head>
@@ -33,29 +38,41 @@
         <img src="./img/podpis.jpg" alt="Подпись" class="signature">
     </div>
 
-    <div class="passport-page">
+    <div class="passport-page clearfix">
         <h2>Третья страница паспорта</h2>
-        <p><strong>Фамилия:</strong> Альперович</p>
-        <p><strong>Имя:</strong> Галина</p>
+        <p><strong>Фамилия:</strong> <span id="surname">Альперович</span></p>
+        <p><strong>Имя:</strong> <span id="name">Галина</span></p>
         <p><strong>Отчество:</strong> Александровна</p>
         <p><strong>Пол:</strong> Женский</p>
-        <p><strong>Дата рождения:</strong> 25.12.2005</p>
+        <p><strong>Дата рождения:</strong> <span id="birthdate">25.12.2005</span></p>
         <p><strong>Место рождения:</strong> Москва</p>
         <p><strong>Серия и номер:</strong> 1234 567890</p>
         <img src="./img/foto.jpg" alt="Фото" class="photo">
     </div>
 
-    <button id="getData">Получить данные</button>
+    <button id="changeToLatin">Изменяем кириллицу на латиницу по клику</button>
 
     <script>
-        document.getElementById('getData').onclick = function() {
-            const surname = document.querySelector('strong:contains("Фамилия")').nextSibling.nodeValue.trim();
-            const name = document.querySelector('strong:contains("Имя")').nextSibling.nodeValue.trim();
-            const birthYear = document.querySelector('strong:contains("Дата рождения")').nextSibling.nodeValue.trim().split('.').pop();
+        document.getElementById('changeToLatin').onclick = function() {
+            const surnameElement = document.getElementById('surname');
+            const nameElement = document.getElementById('name');
+            const birthDateElement = document.getElementById('birthdate');
 
-            console.log('Фамилия:', surname);
-            console.log('Имя:', name);
-            console.log('Год рождения:', birthYear);
+            const surname = surnameElement.innerText.trim();
+            const name = nameElement.innerText.trim();
+            const birthDate = birthDateElement.innerText.trim();
+
+            // Преобразование на латиницу
+            const latinSurname = surname.replace(/А/g, 'A').replace(/Л/g, 'L').replace(/Ь/g, '').replace(/П/g, 'P').replace(/Е/g, 'E').replace(/Р/g, 'R').replace(/О/g, 'O').replace(/В/g, 'V').replace(/И/g, 'I').replace(/Ч/g, 'Ch');
+            const latinName = name.replace(/Г/g, 'G').replace(/А/g, 'A').replace(/Л/g, 'L').replace(/И/g, 'I').replace(/Н/g, 'N').replace(/А/g, 'A');
+            
+            // Обновление данных
+            surnameElement.innerText = latinSurname;
+            nameElement.innerText = latinName;
+
+            // Изменение года рождения
+            const year = birthDate.split('.').pop();
+            birthDateElement.innerText = year;
         };
     </script>
 
