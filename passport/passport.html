@@ -15,11 +15,13 @@
             width: 600px;
             height: auto;
             margin-bottom: 20px;
+            position: relative;
         }
         .signature, .photo {
             width: 100px;
-            float: right;
-            margin-left: 20px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
         }
         h2 {
             text-align: center;
@@ -56,23 +58,17 @@
         document.getElementById('changeToLatin').onclick = function() {
             const surnameElement = document.getElementById('surname');
             const nameElement = document.getElementById('name');
-            const birthDateElement = document.getElementById('birthdate');
 
             const surname = surnameElement.innerText.trim();
             const name = nameElement.innerText.trim();
-            const birthDate = birthDateElement.innerText.trim();
 
             // Преобразование на латиницу
             const latinSurname = surname.replace(/А/g, 'A').replace(/Л/g, 'L').replace(/Ь/g, '').replace(/П/g, 'P').replace(/Е/g, 'E').replace(/Р/g, 'R').replace(/О/g, 'O').replace(/В/g, 'V').replace(/И/g, 'I').replace(/Ч/g, 'Ch');
             const latinName = name.replace(/Г/g, 'G').replace(/А/g, 'A').replace(/Л/g, 'L').replace(/И/g, 'I').replace(/Н/g, 'N').replace(/А/g, 'A');
-            
+
             // Обновление данных
             surnameElement.innerText = latinSurname;
             nameElement.innerText = latinName;
-
-            // Изменение года рождения
-            const year = birthDate.split('.').pop();
-            birthDateElement.innerText = year;
         };
     </script>
 
