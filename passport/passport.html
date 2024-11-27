@@ -1,14 +1,82 @@
 <!DOCTYPE html>
-<html>
- 
-    <head>
-        <p>Паспорт</p>
-    </head>
-<body >
-    <div>
-        <p>
-            Сдесь будет информация о паспорте
-        </p>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Паспорт Российской Федерации</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .passport-page {
+            border: 1px solid #000;
+            padding: 20px;
+            width: 600px;
+            height: auto;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .signature, .photo {
+            width: 100px;
+            position: absolute;
+        }
+        .signature {
+            right: 20px;
+            top: 60px;
+        }
+        .photo {
+            right: 20px;
+            top: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .clearfix {
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="passport-page">
+        <h2>Вторая страница</h2>
+        <p><strong>Кем выдан:</strong> УФМС России</p>
+        <p><strong>Дата выдачи:</strong> 01.01.2020</p>
+        <img src="./img/podpis.jpg" alt="Подпись" class="signature">
     </div>
+
+    <div class="passport-page clearfix">
+        <h2>Третья страница</h2>
+        <p><strong>Фамилия:</strong> <span id="surname">Альперович</span></p>
+        <p><strong>Имя:</strong> <span id="name">Галина</span></p>
+        <p><strong>Отчество:</strong> <span id="patronymic">Александровна</span></p>
+        <p><strong>Пол:</strong> Женский</p>
+        <p><strong>Дата рождения:</strong> <span id="birthdate">25.12.2005</span></p>
+        <p><strong>Место рождения:</strong> Москва</p>
+        <p><strong>Серия и номер:</strong> 1234 567890</p>
+        <img src="./img/foto.jpg" alt="Фото" class="photo">
+    </div>
+
+    <button id="changeToLatin">Изменяем кириллицу на латиницу по клику</button>
+
+    <script>
+        document.getElementById('changeToLatin').onclick = function() {
+            const surnameElement = document.getElementById('surname');
+            const nameElement = document.getElementById('name');
+            const patronymicElement = document.getElementById('patronymic');
+
+            // Преобразование на латиницу
+            const latinSurname = surnameElement.innerText.trim().replace('Альперович', 'Alperovich');
+            const latinName = nameElement.innerText.trim().replace('Галина', 'Galina');
+            const latinPatronymic = patronymicElement.innerText.trim().replace('Александровна', 'Aleksandrovna');
+
+            // Обновление данных
+            surnameElement.innerText = latinSurname;
+            nameElement.innerText = latinName;
+            patronymicElement.innerText = latinPatronymic;
+        };
+    </script>
+
 </body>
 </html>
